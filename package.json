@@ -1,0 +1,15 @@
+{
+  "name": "ts-upsert",
+  "version": "0.0.0",
+  "keywords": [
+    "Map",
+    "polyfill",
+    "upsert",
+    "WeakMap"
+  ],
+  "repository": "LinusU/ts-upsert",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.3.0"
+  }
+}
