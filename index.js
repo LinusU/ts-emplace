@@ -1,2 +1,2 @@
-require('core-js/features/map/upsert')
-require('core-js/features/weak-map/upsert')
+require('core-js/modules/esnext.map.emplace.js')
+require('core-js/modules/esnext.weak-map.emplace.js')

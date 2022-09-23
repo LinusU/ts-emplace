@@ -1,9 +1,7 @@
 interface Map<K, V> {
-  upsert (key: K, update: ((value: V) => V) | undefined, insert: () => V): V
-  upsert (key: K, update: (value: V) => V, insert?: undefined): V | undefined
+  emplace (key: K, op: { insert?: (key: K, map: Map<K, V>) => V, update?: (existing: V, key: K, map: Map<K, V>) => V }): V
 }
 
 interface WeakMap<K extends object, V> {
-  upsert (key: K, update: ((value: V) => V) | undefined, insert: () => V): V
-  upsert (key: K, update: (value: V) => V, insert?: undefined): V | undefined
+  emplace (key: K, op: { insert?: (key: K, map: WeakMap<K, V>) => V, update?: (existing: V, key: K, map: WeakMap<K, V>) => V }): V
 }

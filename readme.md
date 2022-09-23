@@ -1,26 +1,30 @@
-# `Map#upsert` & `WeakMap#upsert` polyfill for TypeScript
+# `Map#emplace` & `WeakMap#emplace` polyfill for TypeScript
 
-This package includes the [core-js](https://github.com/zloirock/core-js) polyfill for `Map#upsert` and `WeakMap#upsert`, along with TypeScript typings.
+This package includes the [core-js](https://github.com/zloirock/core-js) polyfill for `Map#emplace` and `WeakMap#emplace`, along with TypeScript typings.
 
-The `upsert` function is defined in [this TC39 proposal](https://github.com/tc39/proposal-upsert).
+The `emplace` function is defined in [this TC39 proposal](https://github.com/tc39/proposal-upsert).
 
 ## Installation
 
 ```sh
-npm install --save ts-upsert
+npm install --save ts-emplace
 ```
 
 ## Usage
 
 ```typescript
-import 'ts-upsert'
+import 'ts-emplace'
 
 const map = new Map<string, number>()
 
-map.upsert('foo', () => 1)
-map.upsert('bar', undefined, () => 2)
-map.upsert('baz', () => 3, undefined)
-map.upsert('qux', () => 4, () => 5)
+map.emplace('foo', {
+  insert (key, map) {
+    return 0
+  },
+  update (existing, key, map) {
+    return existing + 1
+  }
+})
 ```
 
 ## API

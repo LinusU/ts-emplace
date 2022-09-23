@@ -1,15 +1,16 @@
 {
-  "name": "ts-upsert",
+  "name": "ts-emplace",
   "version": "1.0.0",
   "keywords": [
+    "emplace",
     "Map",
     "polyfill",
     "upsert",
     "WeakMap"
   ],
-  "repository": "LinusU/ts-upsert",
+  "repository": "LinusU/ts-emplace",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.3.0"
+    "core-js": "^3.23.4"
   }
 }
